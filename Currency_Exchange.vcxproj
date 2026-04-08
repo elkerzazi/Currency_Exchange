@@ -131,6 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clsCurrency.h" />
+    <ClInclude Include="clsDate.h" />
+    <ClInclude Include="clsInputValidate.h" />
+    <ClInclude Include="clsMainScreen.h" />
+    <ClInclude Include="clsScreen.h" />
     <ClInclude Include="clsString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,9 +1,13 @@
 
 #include <iostream>
+#include "clsMainScreen.h"
 
 int main()
 {
-    std::cout << "Currency Exchange\n";
+    clsMainScreen::ShowMainMenue();
+
+    system("pause>0");
+    return 0;
 }
 
 

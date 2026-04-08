@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Currency_Exchange.vcxproj" />
+  <Project Path="Currency_Exchange.vcxproj" Id="9cbd7995-86aa-46c0-9c93-5c5c90dc138c" />
 </Solution>
