@@ -27,7 +27,7 @@ private:
         vCurrencyData = clsString::Split(Line, Seperator);
 
         return clsCurrency(enMode::UpdateMode, vCurrencyData[0], vCurrencyData[1], vCurrencyData[2],
-            stod(vCurrencyData[3]));
+            stof(vCurrencyData[3]));
 
     }
 
@@ -169,5 +169,9 @@ public:
         return _GetEmptyCurrencyObject();
     }
 
+    static vector <clsCurrency> GetCurrenciesList()
+    {
+        return _LoadCurrencysDataFromFile();
+    }
 };
 

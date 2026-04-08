@@ -130,6 +130,7 @@
     <ClCompile Include="Currency_Exchange.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="clsCurrenciesListScreen.h" />
     <ClInclude Include="clsCurrency.h" />
     <ClInclude Include="clsDate.h" />
     <ClInclude Include="clsInputValidate.h" />

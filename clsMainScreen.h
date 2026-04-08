@@ -4,6 +4,7 @@
 #include "clsScreen.h"
 #include "clsInputValidate.h"
 #include <iomanip>
+#include "clsCurrenciesListScreen.h"
 
 using namespace std;
 
@@ -12,8 +13,8 @@ class clsMainScreen : protected clsScreen
 
 private:
 
-	enum enMainMenueOptions {
-		eListCurrencies = 1, eFindCurrency = 2, eUpdateRate = 3,
+	enum enCurrenciesMainMenueOptions {
+		eListCurrencies = 1, eFindCurrency = 2, eUpdateCurrencyRate = 3,
 		eCurrencyCalculator = 4, eExit = 5
 	};
 
@@ -32,9 +33,10 @@ private:
 		ShowMainMenue();
 	}
 
-	static void _ShowAllCurrenciesScreen()
+	static void _ShowCurrenciesListScreen()
 	{
-		cout << "\nCurrencies List Screen Will be here...\n";
+		//cout << "\nCurrencies List Screen Will be here...\n";
+		clsCurrenciesListScreen::ShowCurrenciesListScreen();
 		
 	}
 
@@ -60,39 +62,39 @@ private:
 
 	}
 
-	static void _PerfromMainMenueOption(enMainMenueOptions MainMenueOption)
+	static void _PerfromCurrenciesMainMenueOption(enCurrenciesMainMenueOptions CurrenciesMainMenueOption)
 	{
-		switch (MainMenueOption)
+		switch (CurrenciesMainMenueOption)
 		{
-		case enMainMenueOptions::eListCurrencies:
+		case enCurrenciesMainMenueOptions::eListCurrencies:
 		{
 			system("cls");
-			_ShowAllCurrenciesScreen();
+			_ShowCurrenciesListScreen();
 			_GoBackToMainMenue();
 			break;
 		}
-		case enMainMenueOptions::eFindCurrency:
+		case enCurrenciesMainMenueOptions::eFindCurrency:
 		{
 			system("cls");
 			_ShowFindCurrencyScreen();
 			_GoBackToMainMenue();
 			break;
 		}
-		case enMainMenueOptions::eUpdateRate:
+		case enCurrenciesMainMenueOptions::eUpdateCurrencyRate:
 		{
 			system("cls");
 			_ShowUpdateRateScreen();
 			_GoBackToMainMenue();
 			break;
 		}
-		case enMainMenueOptions::eCurrencyCalculator:
+		case enCurrenciesMainMenueOptions::eCurrencyCalculator:
 		{
 			system("cls");
 			_ShowCurrencyCalculator();
 			_GoBackToMainMenue();
 			break;
 		}
-		case enMainMenueOptions::eExit:
+		case enCurrenciesMainMenueOptions::eExit:
 		{
 			system("cls");
 			_Logout();
@@ -118,7 +120,7 @@ public:
 		cout << setw(37) << left << "" << "\t[5] Logout.\n\n";
 		cout << setw(37) << left << "" << "===========================================\n\n";
 
-		_PerfromMainMenueOption((enMainMenueOptions)_ReadMainMenueOption());
+		_PerfromCurrenciesMainMenueOption((enCurrenciesMainMenueOptions)_ReadMainMenueOption());
 
 	}
 
