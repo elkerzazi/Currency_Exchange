@@ -68,11 +68,6 @@ public:
 
 			_ShowResults(Currency);
 		}
-		
-
-
-		
-
 	}
 };
 

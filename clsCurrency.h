@@ -77,6 +77,41 @@ private:
         return clsCurrency(enMode::EmptyMode, "", "", "", 0);
     }
 
+    static void _SaveCurrencyDataToFile(vector <clsCurrency> vCurrencys)
+    {
+        fstream MyFile;
+
+        MyFile.open("Currencies.txt", ios::out); //over write
+
+        string DataLine;
+
+        if (MyFile.is_open())
+        {
+            for (clsCurrency C : vCurrencys)
+            {
+                DataLine = _ConverCurrencyObjectToLine(C);
+                MyFile << DataLine << endl;
+            }
+            MyFile.close();
+        }
+    }
+
+    void _Update()
+    {
+        vector<clsCurrency> _vCurrencys = _LoadCurrencysDataFromFile();
+
+        for (clsCurrency& Currency : _vCurrencys)
+        {
+            if (Currency.CurrencyCode() == CurrencyCode())
+            {
+                Currency = *this;
+                break;
+            }
+        }
+
+        _SaveCurrencyDataToFile(_vCurrencys);
+    }
+
 public:
 
     clsCurrency(enMode Mode, string Country, string CurrencyCode, string CurrencyName, float Rate)
@@ -173,5 +208,19 @@ public:
     {
         return _LoadCurrencysDataFromFile();
     }
+
+    void UpdateRate(float NewRate)
+    {
+        _Rate = NewRate;
+        _Update();
+    }
+
+    static bool IsCurrencyExist(string CurrencyCode)
+    {
+        clsCurrency Currency = FindByCode(CurrencyCode);
+
+        return (!Currency.IsEmpty());
+    }
+
 };
 

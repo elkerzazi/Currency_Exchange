@@ -6,6 +6,7 @@
 #include <iomanip>
 #include "clsCurrenciesListScreen.h"
 #include "clsFindCurrencyScreen.h"
+#include "clsUpdateCurrencyRateScreen.h"
 
 using namespace std;
 
@@ -50,7 +51,8 @@ private:
 
 	static void _ShowUpdateRateScreen()
 	{
-		cout << "\nUpdate Rate Screen Will be here...\n";
+		//cout << "\nUpdate Rate Screen Will be here...\n";
+		clsUpdateCurrencyRateScreen::ShowUpdateCurrencyRateScreen();
 	}
 
 	static void _ShowCurrencyCalculator()
